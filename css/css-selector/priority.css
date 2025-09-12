@@ -9,13 +9,13 @@ body {
 }
 
 h1 {
-  color: rgb(115, 0, 125);
+  color: rgb(238, 48, 255);
   font-size: 28px;
   margin-top: 20px;
 }
 
 p {
-  color: #333;
+  color: #000000;
   margin-top: 15px;
 }
 
@@ -39,5 +39,18 @@ p {
 }
 
 .container > p {
-  font-size: 20px;
+  font-size: 15px;
+  color: rgba(41, 41, 41, 0.6);
+}
+
+.container span {
+  font-style: italic;
+  color: green;
+}
+
+h1,
+h3 {
+  color: #b20000;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
 }
