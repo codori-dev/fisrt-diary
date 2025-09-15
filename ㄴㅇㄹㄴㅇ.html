@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS position 예제</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .controls {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+    }
+    button {
+      margin: 3px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    .parent {
+      margin-top: 60px;
+      width: 300px;
+      height: 400px;
+      border: 2px solid #333;
+      background: #f0f0f0;
+      position: relative; /* absolute 기준용 */
+      overflow: auto;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      background: tomato;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .content {
+      height: 1000px;
+      background: lightgray;
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <button onclick="setPosition('static')">static</button>
+    <button onclick="setPosition('relative')">relative</button>
+    <button onclick="setPosition('absolute')">absolute</button>
+    <button onclick="setPosition('fixed')">fixed</button>
+    <button onclick="setPosition('sticky')">sticky</button>
+  </div>
+
+  <div class="parent">
+    <div id="box" class="box">Box</div>
+    <div class="content"></div>
+  </div>
+
+  <script>
+    function setPosition(type) {
+      const box = document.getElementById("box");
+      box.style.position = type;
+
+      // 기본 위치 값 초기화
+      box.style.top = "";
+      box.style.left = "";
+
+      if (type === "relative") {
+        box.style.top = "20px";
+        box.style.left = "30px";
+      }
+      if (type === "absolute") {
+        box.style.top = "50px";
+        box.style.left = "50px";
+      }
+      if (type === "fixed") {
+        box.style.top = "100px";
+        box.style.left = "150px";
+      }
+      if (type === "sticky") {
+        box.style.top = "10px";
+      }
+
+      console.log(`현재 position: ${type}`);
+    }
+  </script>
+</body>
+</html>
